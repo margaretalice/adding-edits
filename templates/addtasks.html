@@ -2,6 +2,19 @@
 <h3>Add Task</h3>
 <div class="row">
      <form action="" method="POST" class="col s12">
+      <div class="input-field col s12">
+       <i class="material-icons prefix">poll</i>
+    <select id="category" name="category_name">
+      <option value="" disabled selected>Choose category </option>
+       {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                  {% endfor %}
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Task Category</label>
+  </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
@@ -16,7 +29,7 @@
                 <label for="icon_telephone">Task Description</label>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="matfix">
             <div class="input-field col s12">
                 <i class="material-icons prefix">today</i>
                 <input id="due_date" name="due_date" type="text" class="datepicker">
